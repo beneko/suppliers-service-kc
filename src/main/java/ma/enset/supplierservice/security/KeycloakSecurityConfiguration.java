@@ -19,7 +19,7 @@ public class KeycloakSecurityConfiguration extends KeycloakWebSecurityConfigurer
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         http.authorizeRequests()
-                .antMatchers("/products/**", "/suppliers/**").authenticated();
+                .antMatchers( "/suppliers/**").hasAuthority("MANAGER");
     }
 
     @Override
